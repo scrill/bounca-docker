@@ -1,2 +1,8 @@
 # bounca-docker
-Docker files for the BounCA
+[BounCA](https://github.com/repleo/bounca) Docker environment: Nginx + uWSGI
+
+## Usage
+```bash
+docker-compose up --build
+docker-compose down
+```

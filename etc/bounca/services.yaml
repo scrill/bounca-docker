@@ -1,0 +1,41 @@
+psql:
+  dbname: bounca
+  username: postgres
+  # CHANGE: replace this value with your secret
+  password: changeit
+  host: postgres
+  port: 5432
+
+admin:
+  enabled: True
+  superuser_signup: False
+
+django:
+  debug: False
+  # CHANGE: replace this value with your secret
+  secret_key: '<value-django-secret-just-a-random-salt-string>'
+  hosts:
+    # CHANGE: add your hosts here
+    # - my_ca.my_domain.tld
+    - localhost
+    - 127.0.0.1
+
+mail:
+  host: localhost
+  # port: 587 optionally, only for tls and ssl
+  # username: <user>
+  # password: <password>
+  # connection: none # allowed values: none, tls, ssl
+  admin: admin@localhost
+  from: no-reply@localhost
+
+certificate-engine:
+  # allowed values: ed25519, rsa
+  # Ed25519 is a a modern, fast and safe key algorithm, however not supported by all operating systems, like MacOS.
+  # Keep the 'rsa' option if unsure. Root and intermediate keys are 4096 bits, client and server certificates
+  # use 2048 bits keys.
+  key_algorithm: rsa
+
+registration:
+  # allowed values: mandatory, optional, off
+  email_verification: off
